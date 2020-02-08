@@ -4,7 +4,8 @@
   "description": "Scraps Data from Public Profile on InstaGram",
   "scripts": {
     "lint": "prettier --write {src,test}/**/*.ts",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "build": "tsc"
   },
   "keywords": ["jest", "cheerio", "puppeteer", "typescript"],
   "author": "ayodele akingbule",
@@ -20,7 +21,6 @@
     "@types/puppeteer": "^2.0.0",
     "jest": "^25.1.0",
     "jest-config": "^25.1.0",
-    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
     "ts-jest": "^25.2.0",
     "ts-node": "^8.6.2",
