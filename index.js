@@ -51,6 +51,8 @@ const scrapData =  async (url) => {
     result.images.push(getImagesIdAndURls(fifthImage));
     result.images.push(getImagesIdAndURls(sixthImage));
 
+    console.log(result);
+
     await browser.close();
 
     return result;

@@ -1,17 +1,62 @@
 {
-  "name": "webscraper",
+  "name": "instagram-scraper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Scraps Data from Public Profile on InstaGram",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "lint": "prettier --write {src,test}/**/*.ts",
+    "test": "jest --coverage"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["jest", "cheerio", "puppeteer", "typescript"],
+  "author": "ayodele akingbule",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "puppeteer": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "@types/cheerio": "^0.22.16",
+    "@types/puppeteer": "^2.0.0",
+    "jest": "^25.1.0",
+    "jest-config": "^25.1.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testTimeout": 90000,
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js,ts}"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
