@@ -23,6 +23,6 @@ describe('ScrapData Test', () => {
 
   it('fails if invalid instagramHandle is passed', async () => {
     const result = await webScraper(inValidInstagramHandle)
-    expect(result).toBeUndefined()
+    expect(result).toBeNull()
   })
 })
