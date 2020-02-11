@@ -1,13 +1,13 @@
-import scrapData from '../src/webscraper'
+import { webScraper } from '../src/webscraper'
 
-//const validInstagramHandle = "leomessi";
-const validInstagramHandle = 'cristiano'
+const validInstagramHandle = 'leomessi'
+//const validInstagramHandle = 'cristiano'
 
 const inValidInstagramHandle = 'dssods'
 
 describe('ScrapData Test', () => {
   it('works if valid instagramHandle is passed', async () => {
-    const result = await scrapData(validInstagramHandle)
+    const result = await webScraper(validInstagramHandle)
 
     expect(result).toBeDefined()
     if (result) {
@@ -16,12 +16,13 @@ describe('ScrapData Test', () => {
       expect(result.images).toBeDefined()
       expect(result.name).toBeDefined()
       expect(result.num_following).toBeDefined()
+
       expect(result.num_of_followers).toBeDefined()
     }
   })
 
   it('fails if invalid instagramHandle is passed', async () => {
-    const result = await scrapData(inValidInstagramHandle)
+    const result = await webScraper(inValidInstagramHandle)
     expect(result).toBeUndefined()
   })
 })

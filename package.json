@@ -4,20 +4,23 @@
   "description": "Scraps Data from Public Profile on InstaGram",
   "scripts": {
     "lint": "prettier --write {src,test}/**/*.ts",
-    "test": "jest --coverage",
-    "build": "tsc"
+    "test": "jest",
+    "build": "tsc",
+    "start": "npm run build && IG_HANDLE=leomessi node index.js"
   },
-  "keywords": ["jest", "cheerio", "puppeteer", "typescript"],
+  "keywords": [
+    "jest",
+    "puppeteer",
+    "typescript"
+  ],
   "author": "ayodele akingbule",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
     "puppeteer": "^2.1.1"
   },
   "devDependencies": {
     "@types/jest": "^25.1.2",
     "@types/node": "^13.7.0",
-    "@types/cheerio": "^0.22.16",
     "@types/puppeteer": "^2.0.0",
     "jest": "^25.1.0",
     "jest-config": "^25.1.0",
