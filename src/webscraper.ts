@@ -16,19 +16,16 @@ export const webScraper = async (instagramHandle: string) => {
   const page = await browser.newPage()
   await page.goto(url)
 
-  const isError = await page.evaluate( () => {
-      return Array.from(document.querySelectorAll('.p-error')).length > 0
-  });
+  const isError = await page.evaluate(() => {
+    return Array.from(document.querySelectorAll('.p-error')).length > 0
+  })
 
-  if(isError){
-
+  if (isError) {
     await browser.close()
 
-    return null;
-
-  }else{
+    return null
+  } else {
     const headers = await page.evaluate(() => {
-
       const headerNodeList = Array.from(
         // @ts-ignore
         document.querySelector('header section').childNodes
@@ -38,17 +35,17 @@ export const webScraper = async (instagramHandle: string) => {
       const name = nameNodeElement.innerText ? nameNodeElement.innerText : ''
 
       const numberOfPost = headerNodeList[1]
-      // @ts-ignore
+        // @ts-ignore
         .querySelectorAll('li')[0]
         .innerText.split(' ')[0]
 
       const numberOfFollowers = headerNodeList[1]
-      // @ts-ignore
+        // @ts-ignore
         .querySelectorAll('li')[1]
         .innerText.split(' ')[0]
 
       const numberOfFollowing = headerNodeList[1]
-      // @ts-ignore
+        // @ts-ignore
         .querySelectorAll('li')[2]
         .innerText.split(' ')[0]
       // @ts-ignore
@@ -101,8 +98,4 @@ export const webScraper = async (instagramHandle: string) => {
 
     return data
   }
-
-
-
-
 }
