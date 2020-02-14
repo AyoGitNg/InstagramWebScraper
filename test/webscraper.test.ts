@@ -1,7 +1,7 @@
 import { webScraper } from '../src/webscraper'
 
-const validInstagramHandle = 'leomessi'
-//const validInstagramHandle = 'cristiano'
+//const validInstagramHandle = 'leomessi'
+const validInstagramHandle = 'cristiano'
 
 const inValidInstagramHandle = 'dssods'
 
