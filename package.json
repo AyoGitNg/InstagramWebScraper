@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "prettier --write {src,test}/**/*.ts",
     "test": "jest",
+    "run": "ts-node src/webscraper.ts",
     "build": "tsc",
     "start": "npm run build && IG_HANDLE=leomessi node index.js"
   },
@@ -16,12 +17,14 @@
   "author": "ayodele akingbule",
   "license": "ISC",
   "dependencies": {
-    "puppeteer": "^2.1.1"
+    "cheerio": "^1.0.0-rc.3",
+    "request-promise": "^4.2.5"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.16",
     "@types/jest": "^25.1.2",
     "@types/node": "^13.7.0",
-    "@types/puppeteer": "^2.0.0",
+    "@types/request-promise": "^4.1.45",
     "jest": "^25.1.0",
     "jest-config": "^25.1.0",
     "prettier": "^1.19.1",
